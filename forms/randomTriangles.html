@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title> HW7 Javascript</title>
+</head>
+<body>
+    <canvas id='triangleCanvas' width='800' height='600' style="border:1px solid #000000;"></canvas>
+<script>
+function getRandomColor() {
+    var letters = '123456789ABCDEF';
+    var color = '#';
+    for(var i  =0; i < 6; i++) {
+        color += letters[Math.floor(Math.random()* 16)];
+    }
+    return color;
+}
+
+function drawTriangle(ctx, x, y) {
+    let size = Math.random() * 100;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + size, y);
+    ctx.lineTo(x, y + size);
+    ctx.closePath();
+
+    ctx.fillStyle = getRandomColor();  
+    ctx.fill();
+
+}
+
+function drawRandomTriangles() {
+    var canvas = document.getElementById('triangleCanvas');
+    var ctx = canvas.getContext('2d');
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for(var i = 0; i < 20; i ++) {
+        var x = Math.random() * canvas.width;
+        var y = Math.random() * canvas.height;
+        drawTriangle(ctx, x, y);
+    }   
+}
+window.onload = drawRandomTriangles;
+
+    </script>
+</body>
+</html>
