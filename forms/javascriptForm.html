@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Javascript Validation</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<h1> Validation Form Using Javascript</h1><hr>
+
+<form action="https://ceclnx01.cec.miamioh.edu/~johnsok9/cse383/lab8/lab8.php">
+<ul>
+<li>
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required>
+</li>
+<li>
+<label for="userID">User ID:</label>
+<input type="text" id="userID" name="userID"  required/>
+</li>
+<li>
+<label for="numMobileDevices">Mobil Devices:</label>
+<input type="number" id="numMobileDevices" name="numMobileDevices">
+</li>
+<li>
+<label for="quoteCite"> Quotation: </label>
+<input type="text" id="quoteCite" name="quoteCite" > <br><br>
+</li>
+<button type="submit" onclick="validateForm()">Submit</button>
+</ul>
+</form>
+<script>
+function validateForm() {
+var name = document.getElementById("name").value;
+var userID = document.getElementById("userID").value;
+var numMobileDevices = document.getElementById("numMobileDevices").value;
+var quoteCite = document.getElementById("quoteCite").value;
+
+var isValid = true;
+
+if(name.length <= 2) {
+  alert("Name must be at least 2 characters long");
+  isValid = false;
+}
+
+if(!userID.match(/^\S+$/) ) {
+  alert("userID should be only one word");
+  isValid = false;
+}
+
+if(numMobileDevices < 1 || numMobileDevices > 10) {
+  alert("Number of mobile devices must be between 1 and 10");
+}
+
+if(!quoteCite.match(/^[a-zA-Z\s!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]+$/)) {
+alert("Quotation must not contain numbers");
+}
+
+if(isValid) {
+ document.getElementById("myForm").submit();
+}
+}
+document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    validateForm();
+});
+</script>
+</body>
+</html>
