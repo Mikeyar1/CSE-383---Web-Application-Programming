@@ -54,15 +54,13 @@ public class socketClient {
         }
 
 	try {
-		// TODO1 Replace with correct information from assignment
+		// Replace with correct information from assignment
 		muid = "ariasm";
 		hostname = "172.17.14.146";
 		port = 5002;
 
-                /* TODO2 - get muid, hostname (IP/Hostname) and port from command line (uncomment next 3 lines)
-		muid=
-		hostname=
-		port =
+                /* get muid, hostname (IP/Hostname) and port from command line (uncomment next 3 lines)
+	
 		*/
 	} catch (Exception e) {
 
@@ -107,7 +105,7 @@ public class socketClient {
             try {
                 LOGGER.info("Connecting");
                 connect();
-                // TODO1 Send your MUID (not the empty string)
+                //  Send your MUID (not the empty string)
 		sendString("");
 
                 greeting = readResponse();
@@ -124,7 +122,7 @@ public class socketClient {
             System.out.println("Success");
             System.out.println("Greeting => " + greeting);
 
-	    /* TODO2     Uncomment lines below
+	    /*  Uncomment lines below
             System.out.println("Formula  => " + formula);
             System.out.println("Answer   => " + response);
 	    */
@@ -143,8 +141,8 @@ public class socketClient {
         //
         LOGGER.log(Level.INFO,"Connect => hostname = " + hostname + " port = " + port);
         socket = new Socket(hostname,port);
-        // TODO2 set timeout to 5 seconds
-        /* TODO2 set tcp no delay
+        //  set timeout to 5 seconds
+        /*  set tcp no delay
         socket.setSoTimeout();
         socket.setTcpNoDelay();
 	*/
@@ -165,7 +163,7 @@ public class socketClient {
         while (itr.hasNext()) {
 	    String data=itr.next();
 
-	    /* TODO2 uncomment line below and add the current element being sent to formula
+	    /*  uncomment line below and add the current element being sent to formula
 	    	formula +=
 	    */
 	    sendString(data);
