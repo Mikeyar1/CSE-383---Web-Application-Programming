@@ -1,0 +1,40 @@
+h1 {
+    color: red;
+    font-size: 26pt;
+    text-align: center;
+    font-style: italic;
+}
+h2 {
+    color: green;
+    font-size: 23pt;
+    text-align: left;
+    font-weight: bold;
+}
+p {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-indent: 50px;
+    text-align: justify;
+}
+#p1 {
+    color: green;
+}
+ #p1::first-letter {
+     font-size: 72pt;
+ }
+  #div1 {
+     border: 5px dashed blue;
+     margin-top: 50px;
+     margin-bottom: 50px;
+ }
+ .bold {
+     font-weight: bold;
+ }
+ ol > li {
+     color: red;
+     text-decoration: underline;
+ }
+ a {
+     color: green;
+     outline: 1px solid green;
+ }
